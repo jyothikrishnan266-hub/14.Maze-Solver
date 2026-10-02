@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Solver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🧩 Maze Solver</h1>
+    <p>Find the path from Start to Destination using Graph Algorithms</p>
+</header>
+
+<nav>
+    <button onclick="generateMaze()">🔄 New Maze</button>
+    <button onclick="solveMaze('BFS')">🔵 Solve using BFS</button>
+    <button onclick="solveMaze('DFS')">🟣 Solve using DFS</button>
+    <button onclick="clearPath()">🧹 Clear Path</button>
+</nav>
+
+<main>
+
+    <!-- Maze -->
+
+    <section class="card">
+
+        <h2>🗺️ Maze</h2>
+
+        <div id="maze"></div>
+
+        <div class="legend">
+            <span><i class="start"></i> Start</span>
+            <span><i class="end"></i> End</span>
+            <span><i class="wall"></i> Wall</span>
+            <span><i class="path"></i> Path</span>
+            <span><i class="visited"></i> Visited</span>
+        </div>
+
+    </section>
+
+
+    <!-- Controls -->
+
+    <section class="card">
+
+        <h2>⚙️ Maze Controls</h2>
+
+        <div class="controls">
+
+            <label>
+                Rows
+                <input
+                    type="number"
+                    id="rows"
+                    value="15"
+                    min="5"
+                    max="30">
+            </label>
+
+            <label>
+                Columns
+                <input
+                    type="number"
+                    id="cols"
+                    value="20"
+                    min="5"
+                    max="40">
+            </label>
+
+            <button class="primary" onclick="createMaze()">
+                Create Maze
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Statistics -->
+
+    <section class="stats">
+
+        <div class="stat">
+            <span>🔢</span>
+            <h3 id="steps">0</h3>
+            <p>Path Steps</p>
+        </div>
+
+        <div class="stat">
+            <span>👁️</span>
+            <h3 id="visited">0</h3>
+            <p>Visited Cells</p>
+        </div>
+
+        <div class="stat">
+            <span>⚡</span>
+            <h3 id="algorithm">-</h3>
+            <p>Algorithm</p>
+        </div>
+
+        <div class="stat">
+            <span>⏱️</span>
+            <h3 id="time">0 ms</h3>
+            <p>Execution Time</p>
+        </div>
+
+    </section>
+
+
+    <!-- Algorithm Information -->
+
+    <section class="card">
+
+        <h2>📚 Algorithms</h2>
+
+        <div class="algorithm-info">
+
+            <div>
+                <h3>🔵 BFS</h3>
+                <p>
+                    Breadth First Search explores the maze level by level.
+                    For an unweighted maze, BFS finds the shortest path.
+                </p>
+            </div>
+
+            <div>
+                <h3>🟣 DFS</h3>
+                <p>
+                    Depth First Search explores one path deeply before
+                    backtracking to try another path.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>🧩 Maze Solver | HTML • CSS • JavaScript</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
